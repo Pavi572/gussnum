@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guess number</title>
+  <style>
+
+    body {
+      background-color: rgb(150, 184, 212); 
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 100px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      background-color:rgb(87, 43, 128)
+    (197, 42, 50);
+      color: white;
+    }
+    #result, #score {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+</center>
+<body>
+  <center>
+  <h1>Guess the number</h1>
+  <input id="one" type="number" min="1" max="10">
+  <button onclick="check()">Check</button>
+  <p id="result">You are wrong/right</p>
+  <p id="score">Your score: 10</p>
+
+  <script>
+    var num = document.getElementById("one");
+    var para = document.getElementById("result");
+    var sc = document.getElementById("score");
+    var score = 10;
+    var ran = Math.random();
+    var r = Math.floor(ran * 10 + 1);
+
+    function check() {
+      if (r == Number(num.value)) {
+        para.textContent = "You are right";
+        sc.textContent = "Your score: " + score;
+        alert("You won...!");
+      } else {
+        para.textContent = "You are wrong";
+        score = score - 1;
+        sc.textContent = "Your score: " + score;
+      }
+    }
+  </script>
+</body>
+</html>
